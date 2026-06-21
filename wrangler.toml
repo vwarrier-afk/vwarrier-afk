@@ -1,3 +1,6 @@
 name = "vwarrier-afk"
 compatibility_date = "2025-01-01"
 pages_build_output_dir = "out"
+
+[assets]
+directory = "./out"
