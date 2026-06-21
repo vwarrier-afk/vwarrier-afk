@@ -29,7 +29,7 @@ const links = [
 export default function ContactPage() {
   return (
     <div>
-      <h1 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 tracking-tight mb-4">
+      <h1 className="text-4xl font-bold text-slate-900 dark:text-slate-50 tracking-tight mb-4">
         Contact
       </h1>
       <p className="text-slate-500 dark:text-slate-400 mb-10 leading-relaxed max-w-[480px]">

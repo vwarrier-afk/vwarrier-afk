@@ -1,5 +1,4 @@
 const links = [
-  { label: "Twitter", href: "https://twitter.com/vivekwarrier" },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/vivekwarrier",
@@ -10,7 +9,7 @@ const links = [
 export default function Footer() {
   return (
     <footer className="border-t border-slate-200 dark:border-slate-800 mt-24">
-      <div className="max-w-[680px] mx-auto px-4 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="max-w-[760px] mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-sm text-slate-400 dark:text-slate-500">
           &copy; {new Date().getFullYear()} Vivek Warrier
         </p>

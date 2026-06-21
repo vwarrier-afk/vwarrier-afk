@@ -12,10 +12,10 @@ export default function BlogPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 tracking-tight mb-2">
+      <h1 className="text-4xl font-bold text-slate-900 dark:text-slate-50 tracking-tight mb-3">
         Writing
       </h1>
-      <p className="text-sm text-slate-400 dark:text-slate-500 mb-10">
+      <p className="text-slate-400 dark:text-slate-500 mb-12">
         {posts.length} {posts.length === 1 ? "post" : "posts"}
       </p>
 

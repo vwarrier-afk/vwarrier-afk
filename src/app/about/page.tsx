@@ -31,7 +31,7 @@ const interests = [
 export default function AboutPage() {
   return (
     <div>
-      <h1 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 tracking-tight mb-8">
+      <h1 className="text-4xl font-bold text-slate-900 dark:text-slate-50 tracking-tight mb-8">
         About
       </h1>
 
@@ -76,7 +76,7 @@ export default function AboutPage() {
 
       <section className="space-y-8">
         <div>
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-5">
+          <h2 className="text-sm font-semibold text-slate-800 dark:text-slate-200 uppercase tracking-wide mb-5">
             Experience
           </h2>
           <div className="space-y-5">
@@ -102,7 +102,7 @@ export default function AboutPage() {
         </div>
 
         <div>
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-5">
+          <h2 className="text-sm font-semibold text-slate-800 dark:text-slate-200 uppercase tracking-wide mb-5">
             Interests
           </h2>
           <div className="flex flex-wrap gap-2">
@@ -118,7 +118,7 @@ export default function AboutPage() {
         </div>
 
         <div>
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-5">
+          <h2 className="text-sm font-semibold text-slate-800 dark:text-slate-200 uppercase tracking-wide mb-5">
             Resume
           </h2>
           <a
