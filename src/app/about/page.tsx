@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Vivek Warrier — Product Manager, technologist, and data enthusiast.",
+    "About Vivek Warrier — Product Manager, tech enthusiast, and lifelong learner. I work on products that move money reliably and securely at scale.",
 };
 
 const experience = [
@@ -51,14 +51,14 @@ export default function AboutPage() {
           don&rsquo;t fully understand, and I&rsquo;ve learned to spot
           engineering constraints early.
         </p>
-        <p>
+        {/* <p> //Commented to avoid misinformation about myself :P
           Outside of work, I&rsquo;m interested in data science and
           visualisation &mdash; there&rsquo;s something deeply satisfying about
           turning raw numbers into a picture that makes an argument you
           couldn&rsquo;t make with words alone. I&rsquo;m also keeping a
           close eye on how JavaScript continues to evolve and expand into
           new domains.
-        </p>
+        </p> */}
         <p>
           I look to collaborate on technology that has the power to impact
           people positively. If that resonates,{" "}
