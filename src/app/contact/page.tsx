@@ -19,12 +19,6 @@ const links = [
     external: true,
   },
   {
-    label: "Twitter",
-    value: "@vivekwarrier",
-    href: "https://twitter.com/vivekwarrier",
-    external: true,
-  },
-  {
     label: "GitHub",
     value: "github.com/vwarrier-afk",
     href: "https://github.com/vwarrier-afk",
