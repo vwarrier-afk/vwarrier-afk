@@ -38,7 +38,7 @@ export default function RootLayout({
       <body className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 antialiased min-h-screen flex flex-col">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
-          <main className="flex-1 max-w-[680px] w-full mx-auto px-4 py-12">
+          <main className="flex-1 max-w-[760px] w-full mx-auto px-6 py-14">
             {children}
           </main>
           <Footer />

@@ -48,12 +48,12 @@ export default async function PostPage({ params }: Props) {
   return (
     <article>
       <header className="mb-10">
-        <h1 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 tracking-tight mb-3 leading-snug">
+        <h1 className="text-4xl font-bold text-slate-900 dark:text-slate-50 tracking-tight mb-4 leading-tight">
           {post.title}
         </h1>
         <time
           dateTime={post.date}
-          className="text-sm font-mono text-slate-400 dark:text-slate-500"
+          className="text-xs font-mono text-slate-400 dark:text-slate-500"
         >
           {formattedDate}
         </time>
