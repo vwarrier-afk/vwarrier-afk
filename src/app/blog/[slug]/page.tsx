@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
 import Prose from "@/components/Prose";
+import ReadingProgress from "@/components/ReadingProgress";
 import { getAllPosts, getPost } from "@/lib/posts";
 
 type Props = {
@@ -45,6 +46,7 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <article>
+      <ReadingProgress />
       <header className="mb-10">
         <h1 className="text-4xl font-serif font-bold text-stone-900 dark:text-stone-50 tracking-tight mb-4 leading-tight">
           {post.title}
