@@ -48,12 +48,12 @@ export default async function PostPage({ params }: Props) {
   return (
     <article>
       <header className="mb-10">
-        <h1 className="text-4xl font-bold text-slate-900 dark:text-slate-50 tracking-tight mb-4 leading-tight">
+        <h1 className="text-4xl font-serif font-bold text-stone-900 dark:text-stone-50 tracking-tight mb-4 leading-tight">
           {post.title}
         </h1>
         <time
           dateTime={post.date}
-          className="text-xs font-mono text-slate-400 dark:text-slate-500"
+          className="text-xs font-mono text-stone-400 dark:text-stone-500"
         >
           {formattedDate}
         </time>
@@ -63,10 +63,10 @@ export default async function PostPage({ params }: Props) {
         <MDXRemote source={post.content} />
       </Prose>
 
-      <footer className="mt-14 pt-8 border-t border-slate-100 dark:border-slate-800">
+      <footer className="mt-14 pt-8 border-t border-stone-100 dark:border-stone-800">
         <Link
           href="/blog"
-          className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition-colors"
+          className="text-sm text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-200 transition-colors"
         >
           &larr; All posts
         </Link>

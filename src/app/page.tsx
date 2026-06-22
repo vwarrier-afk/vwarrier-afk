@@ -8,13 +8,13 @@ export default function Home() {
   return (
     <div className="space-y-20">
       <section className="pt-4">
-        <p className="text-xs font-mono font-semibold text-blue-500 dark:text-blue-400 uppercase tracking-widest mb-4">
+        <p className="text-xs font-mono font-semibold text-amber-600 dark:text-amber-500 uppercase tracking-widest mb-4">
           Product Manager · Payments
         </p>
-        <h1 className="text-5xl font-bold text-slate-900 dark:text-slate-50 tracking-tight leading-tight mb-8">
+        <h1 className="text-5xl font-serif font-bold text-stone-900 dark:text-stone-50 tracking-tight leading-tight mb-8">
           Vivek Warrier
         </h1>
-        <div className="space-y-4 text-slate-600 dark:text-slate-400 leading-relaxed max-w-[580px] text-lg">
+        <div className="space-y-4 text-stone-600 dark:text-stone-400 leading-relaxed max-w-[580px] text-lg">
           <p>
             Product Manager at a global payments company. Previously, I spent
             five years as a Salesforce engineer, which gave me an unusual
@@ -30,13 +30,13 @@ export default function Home() {
 
       <section>
         <div className="flex items-baseline justify-between mb-6">
-          <h2 className="text-sm font-semibold text-slate-800 dark:text-slate-200 uppercase tracking-wide">
+          <h2 className="text-sm font-semibold text-stone-800 dark:text-stone-200 uppercase tracking-wide">
             Latest Writing
           </h2>
           {recentPosts.length > 0 && (
             <Link
               href="/blog"
-              className="text-sm text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
+              className="text-sm text-amber-600 hover:text-amber-700 dark:text-amber-500 dark:hover:text-amber-400 transition-colors"
             >
               All posts &rarr;
             </Link>
@@ -49,7 +49,7 @@ export default function Home() {
             ))}
           </div>
         ) : (
-          <p className="text-slate-400 dark:text-slate-500">
+          <p className="text-stone-400 dark:text-stone-500">
             Writing coming soon.
           </p>
         )}

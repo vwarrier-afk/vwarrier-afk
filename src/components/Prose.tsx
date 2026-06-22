@@ -10,10 +10,10 @@ export default function Prose({
   return (
     <div
       className={cn(
-        "prose prose-slate dark:prose-invert max-w-none",
-        "prose-headings:font-semibold prose-headings:tracking-tight",
-        "prose-a:text-blue-500 prose-a:no-underline hover:prose-a:underline",
-        "prose-pre:bg-slate-100 dark:prose-pre:bg-slate-800",
+        "prose prose-stone dark:prose-invert max-w-none",
+        "prose-headings:font-serif prose-headings:font-semibold prose-headings:tracking-tight",
+        "prose-a:text-amber-600 prose-a:no-underline hover:prose-a:underline",
+        "prose-pre:bg-stone-100 dark:prose-pre:bg-stone-800",
         className
       )}
     >

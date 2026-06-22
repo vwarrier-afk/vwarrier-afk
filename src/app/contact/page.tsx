@@ -29,10 +29,10 @@ const links = [
 export default function ContactPage() {
   return (
     <div>
-      <h1 className="text-4xl font-bold text-slate-900 dark:text-slate-50 tracking-tight mb-4">
+      <h1 className="text-4xl font-serif font-bold text-stone-900 dark:text-stone-50 tracking-tight mb-4">
         Contact
       </h1>
-      <p className="text-slate-500 dark:text-slate-400 mb-10 leading-relaxed max-w-[480px]">
+      <p className="text-stone-500 dark:text-stone-400 mb-10 leading-relaxed max-w-[480px]">
         The best way to reach me is via email or LinkedIn. I try to respond
         within a few days.
       </p>
@@ -41,16 +41,16 @@ export default function ContactPage() {
         {links.map((link) => (
           <div
             key={link.label}
-            className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-8 py-5 border-b border-slate-100 dark:border-slate-800/60 last:border-0"
+            className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-8 py-5 border-b border-stone-100 dark:border-stone-800/60 last:border-0"
           >
-            <span className="shrink-0 w-16 text-xs font-mono uppercase tracking-widest text-slate-400 dark:text-slate-500">
+            <span className="shrink-0 w-16 text-xs font-mono uppercase tracking-widest text-stone-400 dark:text-stone-500">
               {link.label}
             </span>
             <a
               href={link.href}
               target={link.external ? "_blank" : undefined}
               rel={link.external ? "noopener noreferrer" : undefined}
-              className="text-slate-800 dark:text-slate-200 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+              className="text-stone-800 dark:text-stone-200 hover:text-amber-600 dark:hover:text-amber-500 transition-colors"
             >
               {link.value}
             </a>

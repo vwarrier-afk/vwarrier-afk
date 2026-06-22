@@ -8,10 +8,10 @@ export const metadata: Metadata = {
 export default function PhotographyPage() {
   return (
     <div>
-      <h1 className="text-4xl font-bold text-slate-900 dark:text-slate-50 tracking-tight mb-3">
+      <h1 className="text-4xl font-serif font-bold text-stone-900 dark:text-stone-50 tracking-tight mb-3">
         Photography
       </h1>
-      <p className="text-slate-500 dark:text-slate-400 mb-14 leading-relaxed max-w-[520px]">
+      <p className="text-stone-500 dark:text-stone-400 mb-14 leading-relaxed max-w-[520px]">
         A visual journal — places, light, and moments worth keeping.
       </p>
 
@@ -19,9 +19,9 @@ export default function PhotographyPage() {
         {Array.from({ length: 6 }).map((_, i) => (
           <div
             key={i}
-            className="aspect-square bg-slate-100 dark:bg-slate-800 rounded-sm flex items-end p-3"
+            className="aspect-square bg-stone-100 dark:bg-stone-800 rounded-sm flex items-end p-3"
           >
-            <span className="text-xs font-mono text-slate-400 dark:text-slate-600">
+            <span className="text-xs font-mono text-stone-400 dark:text-stone-600">
               coming soon
             </span>
           </div>
