@@ -21,7 +21,7 @@ export default function Header() {
             Vivek Warrier
           </Link>
           <div className="flex items-center gap-2">
-            <nav className="hidden sm:flex items-center gap-1">
+            <nav className="hidden md:flex items-center gap-1">
               {nav.map((item) => (
                 <Link
                   key={item.href}
@@ -35,8 +35,8 @@ export default function Header() {
             <ThemeToggle />
           </div>
         </div>
-        {/* Mobile nav strip — visible below name row, hidden on sm+ */}
-        <nav className="sm:hidden flex items-center gap-1 pb-3">
+        {/* Mobile nav strip — visible below name row, hidden on md+ */}
+        <nav className="md:hidden flex items-center gap-1 pb-3">
           {nav.map((item) => (
             <Link
               key={item.href}
