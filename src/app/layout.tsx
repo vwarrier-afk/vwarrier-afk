@@ -3,7 +3,6 @@ import { Geist, Geist_Mono, Lora } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import BottomNav from "@/components/BottomNav";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -44,11 +43,10 @@ export default function RootLayout({
       <body className="bg-white dark:bg-stone-950 text-stone-800 dark:text-stone-100 antialiased min-h-screen flex flex-col">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
-          <main className="flex-1 max-w-[760px] w-full mx-auto px-6 py-14 pb-28 sm:pb-14">
+          <main className="flex-1 max-w-[760px] w-full mx-auto px-6 py-14">
             {children}
           </main>
           <Footer />
-          <BottomNav />
         </ThemeProvider>
       </body>
     </html>
