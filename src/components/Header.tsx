@@ -19,7 +19,7 @@ export default function Header() {
           Vivek Warrier
         </Link>
         <div className="flex items-center gap-2">
-          <nav className="flex items-center gap-1">
+          <nav className="hidden sm:flex items-center gap-1">
             {nav.map((item) => (
               <Link
                 key={item.href}
