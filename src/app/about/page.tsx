@@ -72,6 +72,13 @@ export default function AboutPage() {
         </p>
       </div>
 
+      {/* Mood image — replace src with your photo path e.g. src="/about-mood.jpg" */}
+      <div className="relative w-full aspect-[5/2] bg-stone-100 dark:bg-stone-800 rounded overflow-hidden mt-10">
+        <span className="absolute bottom-3 left-4 text-xs font-mono text-stone-400 dark:text-stone-600">
+          mood photo
+        </span>
+      </div>
+
       <hr className="my-10 border-stone-200 dark:border-stone-800" />
 
       <section className="space-y-8">

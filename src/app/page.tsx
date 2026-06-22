@@ -28,6 +28,13 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Mood image — replace src with your photo path e.g. src="/home-mood.jpg" */}
+      <div className="relative w-full aspect-[5/2] bg-stone-100 dark:bg-stone-800 rounded overflow-hidden -mt-6">
+        <span className="absolute bottom-3 left-4 text-xs font-mono text-stone-400 dark:text-stone-600">
+          mood photo
+        </span>
+      </div>
+
       <section>
         <div className="flex items-baseline justify-between mb-6">
           <h2 className="text-sm font-semibold text-stone-800 dark:text-stone-200 uppercase tracking-wide">
