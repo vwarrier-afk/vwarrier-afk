@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Vivek Warrier — Product Manager, tech enthusiast, and lifelong learner. I work on products that move money reliably and securely at scale.",
+    "About Vivek Warrier — Product Manager, technologist, and data enthusiast.",
 };
 
 const experience = [
@@ -31,11 +31,11 @@ const interests = [
 export default function AboutPage() {
   return (
     <div>
-      <h1 className="text-4xl font-bold text-slate-900 dark:text-slate-50 tracking-tight mb-8">
+      <h1 className="text-4xl font-serif font-bold text-stone-900 dark:text-stone-50 tracking-tight mb-8">
         About
       </h1>
 
-      <div className="space-y-5 text-slate-600 dark:text-slate-400 leading-relaxed">
+      <div className="space-y-5 text-stone-600 dark:text-stone-400 leading-relaxed">
         <p>
           I&rsquo;m a Product Manager at a global payments company, where I
           work on products that move money reliably and securely at scale.
@@ -51,20 +51,20 @@ export default function AboutPage() {
           don&rsquo;t fully understand, and I&rsquo;ve learned to spot
           engineering constraints early.
         </p>
-        {/* <p> //Commented to avoid misinformation about myself :P
+        <p>
           Outside of work, I&rsquo;m interested in data science and
           visualisation &mdash; there&rsquo;s something deeply satisfying about
           turning raw numbers into a picture that makes an argument you
           couldn&rsquo;t make with words alone. I&rsquo;m also keeping a
           close eye on how JavaScript continues to evolve and expand into
           new domains.
-        </p> */}
+        </p>
         <p>
           I look to collaborate on technology that has the power to impact
           people positively. If that resonates,{" "}
           <a
             href="/contact"
-            className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
+            className="text-amber-600 hover:text-amber-700 dark:text-amber-500 dark:hover:text-amber-400 transition-colors"
           >
             I&rsquo;d love to hear from you
           </a>
@@ -72,11 +72,11 @@ export default function AboutPage() {
         </p>
       </div>
 
-      <hr className="my-10 border-slate-200 dark:border-slate-800" />
+      <hr className="my-10 border-stone-200 dark:border-stone-800" />
 
       <section className="space-y-8">
         <div>
-          <h2 className="text-sm font-semibold text-slate-800 dark:text-slate-200 uppercase tracking-wide mb-5">
+          <h2 className="text-sm font-semibold text-stone-800 dark:text-stone-200 uppercase tracking-wide mb-5">
             Experience
           </h2>
           <div className="space-y-5">
@@ -85,14 +85,14 @@ export default function AboutPage() {
                 key={item.period}
                 className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6"
               >
-                <span className="shrink-0 text-sm font-mono text-slate-400 dark:text-slate-500 tabular-nums">
+                <span className="shrink-0 text-sm font-mono text-stone-400 dark:text-stone-500 tabular-nums">
                   {item.period}
                 </span>
                 <div>
-                  <p className="text-slate-800 dark:text-slate-200 font-medium">
+                  <p className="text-stone-800 dark:text-stone-200 font-medium">
                     {item.role}
                   </p>
-                  <p className="text-sm text-slate-500 dark:text-slate-400 mt-0.5">
+                  <p className="text-sm text-stone-500 dark:text-stone-400 mt-0.5">
                     {item.org}
                   </p>
                 </div>
@@ -102,14 +102,14 @@ export default function AboutPage() {
         </div>
 
         <div>
-          <h2 className="text-sm font-semibold text-slate-800 dark:text-slate-200 uppercase tracking-wide mb-5">
+          <h2 className="text-sm font-semibold text-stone-800 dark:text-stone-200 uppercase tracking-wide mb-5">
             Interests
           </h2>
           <div className="flex flex-wrap gap-2">
             {interests.map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1 text-sm bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-full"
+                className="px-3 py-1 text-sm bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 rounded-full"
               >
                 {tag}
               </span>
@@ -118,17 +118,17 @@ export default function AboutPage() {
         </div>
 
         <div>
-          <h2 className="text-sm font-semibold text-slate-800 dark:text-slate-200 uppercase tracking-wide mb-5">
+          <h2 className="text-sm font-semibold text-stone-800 dark:text-stone-200 uppercase tracking-wide mb-5">
             Resume
           </h2>
           <a
             href="/resume.pdf"
             download
-            className="inline-flex items-center gap-2 text-sm text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-amber-600 hover:text-amber-700 dark:text-amber-500 dark:hover:text-amber-400 transition-colors"
           >
             Download resume (PDF) &darr;
           </a>
-          <p className="mt-2 text-xs text-slate-400 dark:text-slate-500">
+          <p className="mt-2 text-xs text-stone-400 dark:text-stone-500">
             Drop your resume.pdf into /public to make this link work.
           </p>
         </div>

@@ -12,10 +12,10 @@ export default function BlogPage() {
 
   return (
     <div>
-      <h1 className="text-4xl font-bold text-slate-900 dark:text-slate-50 tracking-tight mb-3">
+      <h1 className="text-4xl font-serif font-bold text-stone-900 dark:text-stone-50 tracking-tight mb-3">
         Writing
       </h1>
-      <p className="text-slate-400 dark:text-slate-500 mb-12">
+      <p className="text-stone-400 dark:text-stone-500 mb-12">
         {posts.length} {posts.length === 1 ? "post" : "posts"}
       </p>
 
@@ -27,7 +27,7 @@ export default function BlogPage() {
         </div>
       ) : (
         <div className="py-16 text-center">
-          <p className="text-slate-400 dark:text-slate-500 text-sm">
+          <p className="text-stone-400 dark:text-stone-500 text-sm">
             No posts yet &mdash; check back soon.
           </p>
         </div>

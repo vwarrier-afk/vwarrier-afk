@@ -10,11 +10,11 @@ const nav = [
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+    <header className="sticky top-0 z-10 border-b border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900">
       <div className="max-w-[760px] mx-auto px-6 py-4 flex items-center justify-between">
         <Link
           href="/"
-          className="text-lg font-bold text-slate-900 dark:text-slate-50 hover:text-blue-500 dark:hover:text-blue-400 transition-colors tracking-tight"
+          className="text-lg font-bold text-stone-900 dark:text-stone-50 hover:text-amber-600 dark:hover:text-amber-500 transition-colors tracking-tight"
         >
           Vivek Warrier
         </Link>
@@ -24,7 +24,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="px-3 py-1.5 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
+                className="px-3 py-1.5 text-sm font-medium text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 transition-colors"
               >
                 {item.label}
               </Link>
