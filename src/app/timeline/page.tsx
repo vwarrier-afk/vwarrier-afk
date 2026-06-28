@@ -8,7 +8,6 @@ export const metadata: Metadata = {
 
 const timeline = [
   {
-    year: "2023",
     period: "2023 – present",
     role: "Product Manager",
     org: "Global Payments Company",
@@ -16,7 +15,6 @@ const timeline = [
       "Working on products that move money reliably and securely at scale. I own the roadmap for a payments processing platform used across multiple markets, partnering closely with engineering, compliance, and commercial teams to ship features that matter — and avoid the ones that don't.",
   },
   {
-    year: "2018",
     period: "2018 – 2023",
     role: "Salesforce Developer",
     org: "Lightning Web Components & Platform",
@@ -24,7 +22,6 @@ const timeline = [
       "Five years building on the Salesforce platform — primarily Lightning Web Components, Apex, and platform automation. Delivered custom solutions across industries including financial services and retail, and developed a deep appreciation for the constraints that make or break a technical decision.",
   },
   {
-    year: "2016",
     period: "2016 – 2018",
     role: "Software Engineer",
     org: "Early career",
@@ -52,41 +49,34 @@ export default function TimelinePage() {
         </p>
       </div>
 
-      <div className="relative">
-        {/* Vertical rule */}
-        <div className="absolute left-[72px] top-0 bottom-0 w-px bg-stone-200 dark:bg-stone-800" />
-
-        <div className="space-y-0">
-          {timeline.map((entry, i) => (
-            <div key={i} className="relative flex gap-8 pb-12 last:pb-0">
-              {/* Year column */}
-              <div className="w-[72px] shrink-0 pt-1 text-right">
-                <span className="text-sm font-mono font-semibold text-stone-400 dark:text-stone-500 tabular-nums">
-                  {entry.year}
-                </span>
-              </div>
-
-              {/* Dot on the timeline */}
-              <div className="absolute left-[68px] top-[6px] w-[9px] h-[9px] rounded-full bg-white dark:bg-stone-950 border-2 border-stone-300 dark:border-stone-600 ring-4 ring-white dark:ring-stone-950" />
-
-              {/* Content column */}
-              <div className="flex-1 pt-0.5">
-                <p className="text-xs font-mono text-stone-400 dark:text-stone-500 mb-1 tabular-nums">
-                  {entry.period}
-                </p>
-                <h2 className="text-base font-semibold text-stone-900 dark:text-stone-50">
-                  {entry.role}
-                </h2>
-                <p className="text-sm text-amber-600 dark:text-amber-500 mb-3">
-                  {entry.org}
-                </p>
-                <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
-                  {entry.description}
-                </p>
-              </div>
+      <div className="space-y-0">
+        {timeline.map((entry, i) => (
+          <div key={i} className="flex gap-5">
+            {/* Dot + vertical line */}
+            <div className="flex flex-col items-center pt-1">
+              <div className="w-2.5 h-2.5 rounded-full bg-amber-500 dark:bg-amber-400 shrink-0" />
+              {i < timeline.length - 1 && (
+                <div className="w-px flex-1 bg-stone-200 dark:bg-stone-800 mt-2" />
+              )}
             </div>
-          ))}
-        </div>
+
+            {/* Content */}
+            <div className={`flex-1 ${i < timeline.length - 1 ? "pb-10" : ""}`}>
+              <p className="text-xs font-mono text-stone-400 dark:text-stone-500 tabular-nums mb-1">
+                {entry.period}
+              </p>
+              <h2 className="text-base font-semibold text-stone-900 dark:text-stone-50 mb-0.5">
+                {entry.role}
+              </h2>
+              <p className="text-sm text-amber-600 dark:text-amber-500 mb-3">
+                {entry.org}
+              </p>
+              <p className="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+                {entry.description}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
