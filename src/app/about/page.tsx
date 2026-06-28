@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About",
@@ -106,6 +107,12 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
+          <Link
+            href="/timeline"
+            className="inline-block mt-5 text-sm text-amber-600 hover:text-amber-700 dark:text-amber-500 dark:hover:text-amber-400 transition-colors"
+          >
+            Full timeline &rarr;
+          </Link>
         </div>
 
         <div>
