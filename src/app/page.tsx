@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import PostCard from "@/components/PostCard";
 import { getAllPosts } from "@/lib/posts";
 
@@ -28,11 +29,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Mood image — replace src with your photo path e.g. src="/home-mood.jpg" */}
-      <div className="relative w-full aspect-[5/2] bg-stone-100 dark:bg-stone-800 rounded overflow-hidden -mt-6">
-        <span className="absolute bottom-3 left-4 text-xs font-mono text-stone-400 dark:text-stone-600">
-          mood photo
-        </span>
+      <div className="relative w-full aspect-[5/2] rounded overflow-hidden -mt-6">
+        <Image
+          src="/mood-photo-home.png"
+          alt=""
+          fill
+          className="object-cover"
+          priority
+        />
       </div>
 
       <section>
