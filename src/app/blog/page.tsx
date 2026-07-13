@@ -33,16 +33,16 @@ export default function BlogPage() {
   return (
     <div>
       <div className="mb-14">
-        <h1 className="text-4xl font-serif font-bold text-stone-900 dark:text-stone-50 tracking-tight mb-3">
+        <h1 className="text-4xl font-serif font-bold text-stone-900 dark:text-stone-50 tracking-tight mb-2">
           Writing
         </h1>
-        <p className="text-stone-400 dark:text-stone-500 text-sm">
+        <p className="text-xs font-mono text-stone-400 dark:text-stone-500 tracking-wide">
           {posts.length} {posts.length === 1 ? "post" : "posts"}
         </p>
       </div>
 
       {posts.length === 0 ? (
-        <p className="text-stone-400 dark:text-stone-500 text-sm">
+        <p className="text-xs font-mono text-stone-400 dark:text-stone-500">
           No posts yet — check back soon.
         </p>
       ) : (
@@ -66,34 +66,34 @@ export default function BlogPage() {
                   const isLast = i === yearPosts.length - 1;
                   const date = formatDate(post.date);
                   return (
-                    <div key={post.slug} className="flex gap-4">
-                      {/* Dot + vertical line */}
-                      <div className="flex flex-col items-center shrink-0 mt-2">
+                    <div key={post.slug} className="flex gap-5">
+                      {/* Dot + vertical line — aligned with date row */}
+                      <div className="flex flex-col items-center shrink-0 pt-1">
                         <div className="w-2 h-2 rounded-full bg-amber-500 dark:bg-amber-400 shrink-0" />
                         {!isLast && (
                           <div className="w-px flex-1 bg-stone-100 dark:bg-stone-800 mt-2" />
                         )}
                       </div>
 
-                      {/* Title + excerpt */}
+                      {/* Content */}
                       <Link
                         href={`/blog/${post.slug}`}
-                        className="group flex-1 pb-8 last:pb-0"
+                        className="group flex-1 pb-9 last:pb-0"
                       >
-                        <div className="flex items-baseline gap-2.5 flex-wrap mb-1">
-                          <time
-                            dateTime={post.date}
-                            className="text-xs font-mono text-stone-400 dark:text-stone-500 tabular-nums shrink-0"
-                          >
-                            {date ?? "—"}
-                          </time>
-                          <h2 className="text-base font-semibold text-stone-900 dark:text-stone-50 group-hover:text-amber-600 dark:group-hover:text-amber-500 transition-colors leading-snug">
-                            {post.title}
-                            <span className="ml-1.5 text-stone-300 dark:text-stone-700 group-hover:text-amber-400 transition-colors text-sm font-normal">→</span>
-                          </h2>
-                        </div>
+                        <time
+                          dateTime={post.date}
+                          className="text-xs font-mono text-stone-400 dark:text-stone-500 tabular-nums block mb-1"
+                        >
+                          {date ?? "—"}
+                        </time>
+                        <h2 className="text-base font-semibold text-stone-900 dark:text-stone-50 group-hover:text-amber-600 dark:group-hover:text-amber-500 transition-colors leading-snug">
+                          {post.title}
+                          <span className="ml-1.5 text-stone-300 dark:text-stone-700 group-hover:text-amber-400 transition-colors font-normal">
+                            →
+                          </span>
+                        </h2>
                         {post.excerpt && (
-                          <p className="text-sm text-stone-500 dark:text-stone-400 leading-relaxed line-clamp-2">
+                          <p className="mt-1.5 text-sm text-stone-500 dark:text-stone-400 leading-relaxed line-clamp-2">
                             {post.excerpt}
                           </p>
                         )}
