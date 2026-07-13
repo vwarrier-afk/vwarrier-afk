@@ -46,7 +46,7 @@ export default function Home() {
           )}
         </div>
         {recentPosts.length > 0 ? (
-          <div>
+          <div className="flex flex-col gap-3">
             {recentPosts.map((post) => (
               <PostCard key={post.slug} post={post} />
             ))}

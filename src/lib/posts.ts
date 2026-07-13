@@ -16,6 +16,16 @@ export type Post = PostMeta & {
   content: string;
 };
 
+// Strip curly/smart quotes that editors insert instead of straight quotes
+const cleanStr = (s: string) =>
+  s.replace(/[“”‘’]/g, "").trim();
+
+// For dates specifically, keep only digits and hyphens
+const cleanDate = (raw: unknown): string => {
+  if (raw instanceof Date) return raw.toISOString().split("T")[0];
+  return String(raw).replace(/[^\d-]/g, "").trim();
+};
+
 export function getAllPosts(): PostMeta[] {
   if (!fs.existsSync(postsDirectory)) return [];
 
@@ -30,19 +40,11 @@ export function getAllPosts(): PostMeta[] {
       const fileContents = fs.readFileSync(filePath, "utf8");
       const { data } = matter(fileContents);
 
-      const rawDate = data.date;
-      const date =
-        rawDate instanceof Date
-          ? rawDate.toISOString().split("T")[0]
-          : (rawDate as string).replace(/[""'']/g, "").trim();
-
       return {
         slug,
-        title: (data.title as string).replace(/[""'']/g, "").trim(),
-        date,
-        excerpt: data.excerpt
-          ? (data.excerpt as string).replace(/[""'']/g, "").trim()
-          : undefined,
+        title: cleanStr(data.title as string),
+        date: cleanDate(data.date),
+        excerpt: data.excerpt ? cleanStr(data.excerpt as string) : undefined,
         image: data.image as string | undefined,
       };
     })
@@ -51,25 +53,16 @@ export function getAllPosts(): PostMeta[] {
 
 export function getPost(slug: string): Post | null {
   const filePath = path.join(postsDirectory, `${slug}.mdx`);
-
   if (!fs.existsSync(filePath)) return null;
 
   const fileContents = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(fileContents);
 
-  const rawDate = data.date;
-  const date =
-    rawDate instanceof Date
-      ? rawDate.toISOString().split("T")[0]
-      : (rawDate as string).replace(/[""'']/g, "").trim();
-
   return {
     slug,
-    title: (data.title as string).replace(/[""'']/g, "").trim(),
-    date,
-    excerpt: data.excerpt
-      ? (data.excerpt as string).replace(/[""'']/g, "").trim()
-      : undefined,
+    title: cleanStr(data.title as string),
+    date: cleanDate(data.date),
+    excerpt: data.excerpt ? cleanStr(data.excerpt as string) : undefined,
     content,
   };
 }
