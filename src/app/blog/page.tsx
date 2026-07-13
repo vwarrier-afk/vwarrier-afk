@@ -10,10 +10,7 @@ export const metadata: Metadata = {
 function formatDate(date: string) {
   const d = new Date(date + "T00:00:00");
   if (isNaN(d.getTime())) return null;
-  return d.toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-  });
+  return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
 }
 
 function groupByYear(posts: PostMeta[]) {
@@ -32,7 +29,7 @@ export default function BlogPage() {
 
   return (
     <div>
-      <div className="mb-14">
+      <div className="mb-16">
         <h1 className="text-4xl font-serif font-bold text-stone-900 dark:text-stone-50 tracking-tight mb-2">
           Writing
         </h1>
@@ -46,59 +43,50 @@ export default function BlogPage() {
           No posts yet — check back soon.
         </p>
       ) : (
-        <div className="space-y-14">
+        <div className="space-y-16">
           {years.map(([year, yearPosts]) => (
             <section key={year}>
-              {/* Year marker */}
-              <div className="flex items-center gap-4 mb-8">
+              {/* Year divider */}
+              <div className="flex items-center gap-4 mb-2">
                 <span className="text-xs font-mono font-semibold text-amber-600 dark:text-amber-500 tracking-widest">
                   {year}
                 </span>
                 <div className="flex-1 h-px bg-stone-100 dark:bg-stone-800" />
-                <span className="text-xs font-mono text-stone-300 dark:text-stone-700">
-                  {yearPosts.length}
-                </span>
               </div>
 
-              {/* Timeline entries */}
-              <div className="space-y-0">
-                {yearPosts.map((post, i) => {
-                  const isLast = i === yearPosts.length - 1;
+              {/* Entries */}
+              <div>
+                {yearPosts.map((post) => {
                   const date = formatDate(post.date);
                   return (
-                    <div key={post.slug} className="flex gap-5">
-                      {/* Dot + vertical line — aligned with date row */}
-                      <div className="flex flex-col items-center shrink-0 pt-1">
-                        <div className="w-2 h-2 rounded-full bg-amber-500 dark:bg-amber-400 shrink-0" />
-                        {!isLast && (
-                          <div className="w-px flex-1 bg-stone-100 dark:bg-stone-800 mt-2" />
-                        )}
-                      </div>
-
-                      {/* Content */}
-                      <Link
-                        href={`/blog/${post.slug}`}
-                        className="group flex-1 pb-9 last:pb-0"
+                    <Link
+                      key={post.slug}
+                      href={`/blog/${post.slug}`}
+                      className="group flex items-start gap-8 py-6 border-b border-stone-100 dark:border-stone-800/60 last:border-0"
+                    >
+                      {/* Date — fixed width, right-aligned */}
+                      <time
+                        dateTime={post.date}
+                        className="w-14 shrink-0 text-right text-xs font-mono text-stone-400 dark:text-stone-500 tabular-nums mt-0.5"
                       >
-                        <time
-                          dateTime={post.date}
-                          className="text-xs font-mono text-stone-400 dark:text-stone-500 tabular-nums block mb-1"
-                        >
-                          {date ?? "—"}
-                        </time>
-                        <h2 className="text-base font-semibold text-stone-900 dark:text-stone-50 group-hover:text-amber-600 dark:group-hover:text-amber-500 transition-colors leading-snug">
+                        {date ?? "—"}
+                      </time>
+
+                      {/* Title + excerpt */}
+                      <div className="flex-1 min-w-0">
+                        <p className="text-base font-semibold text-stone-900 dark:text-stone-50 group-hover:text-amber-600 dark:group-hover:text-amber-500 transition-colors leading-snug mb-1.5">
                           {post.title}
-                          <span className="ml-1.5 text-stone-300 dark:text-stone-700 group-hover:text-amber-400 transition-colors font-normal">
+                          <span className="ml-1.5 opacity-0 group-hover:opacity-100 transition-opacity font-normal text-amber-500">
                             →
                           </span>
-                        </h2>
+                        </p>
                         {post.excerpt && (
-                          <p className="mt-1.5 text-sm text-stone-500 dark:text-stone-400 leading-relaxed line-clamp-2">
+                          <p className="text-sm text-stone-500 dark:text-stone-400 leading-relaxed line-clamp-2">
                             {post.excerpt}
                           </p>
                         )}
-                      </Link>
-                    </div>
+                      </div>
+                    </Link>
                   );
                 })}
               </div>
