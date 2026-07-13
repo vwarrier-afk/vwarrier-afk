@@ -31,7 +31,7 @@ export default function Home() {
 
       <div className="relative w-full aspect-[5/2] rounded overflow-hidden -mt-6">
         <Image
-          src="/mood-photo-home.png"
+          src="/mood-photo-home.JPG"
           alt=""
           fill
           className="object-cover"
