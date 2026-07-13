@@ -68,34 +68,32 @@ export default function BlogPage() {
                   return (
                     <div key={post.slug} className="flex gap-4">
                       {/* Dot + vertical line */}
-                      <div className="flex flex-col items-center shrink-0 pt-1">
+                      <div className="flex flex-col items-center shrink-0 mt-2">
                         <div className="w-2 h-2 rounded-full bg-amber-500 dark:bg-amber-400 shrink-0" />
                         {!isLast && (
                           <div className="w-px flex-1 bg-stone-100 dark:bg-stone-800 mt-2" />
                         )}
                       </div>
 
-                      {/* Date — fixed width, aligned with dot */}
-                      <time
-                        dateTime={post.date}
-                        className="w-14 shrink-0 text-right text-xs font-mono text-stone-400 dark:text-stone-500 tabular-nums pt-0.5"
-                      >
-                        {date ?? "—"}
-                      </time>
-
                       {/* Title + excerpt */}
                       <Link
                         href={`/blog/${post.slug}`}
                         className="group flex-1 pb-8 last:pb-0"
                       >
-                        <h2 className="text-base font-semibold text-stone-900 dark:text-stone-50 group-hover:text-amber-600 dark:group-hover:text-amber-500 transition-colors leading-snug">
-                          {post.title}
-                          <span className="ml-1.5 text-stone-300 dark:text-stone-700 group-hover:text-amber-400 transition-colors text-sm font-normal">
-                            →
-                          </span>
-                        </h2>
+                        <div className="flex items-baseline gap-2.5 flex-wrap mb-1">
+                          <time
+                            dateTime={post.date}
+                            className="text-xs font-mono text-stone-400 dark:text-stone-500 tabular-nums shrink-0"
+                          >
+                            {date ?? "—"}
+                          </time>
+                          <h2 className="text-base font-semibold text-stone-900 dark:text-stone-50 group-hover:text-amber-600 dark:group-hover:text-amber-500 transition-colors leading-snug">
+                            {post.title}
+                            <span className="ml-1.5 text-stone-300 dark:text-stone-700 group-hover:text-amber-400 transition-colors text-sm font-normal">→</span>
+                          </h2>
+                        </div>
                         {post.excerpt && (
-                          <p className="mt-1 text-sm text-stone-500 dark:text-stone-400 leading-relaxed line-clamp-2">
+                          <p className="text-sm text-stone-500 dark:text-stone-400 leading-relaxed line-clamp-2">
                             {post.excerpt}
                           </p>
                         )}
