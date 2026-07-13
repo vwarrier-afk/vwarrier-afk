@@ -26,7 +26,7 @@ export default function Header() {
       <div className="max-w-[760px] mx-auto px-6">
         {/* Single row — name left, controls right */}
         <div className="h-14 flex items-center justify-between">
-          <Link href="/" aria-label="Home" className="opacity-90 hover:opacity-100 transition-opacity">
+          <Link href="/" aria-label="Home" className="p-2 -ml-2 opacity-90 hover:opacity-100 transition-opacity">
             <svg width="30" height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
               <rect width="32" height="32" rx="3" fill="#f59e0b"/>
               <rect x="2.5" y="2.5" width="27" height="27" rx="1" fill="none" stroke="#1c1917" strokeWidth="1.1"/>
