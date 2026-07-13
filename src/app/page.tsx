@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import MoodPhoto from "@/components/MoodPhoto";
 import PostCard from "@/components/PostCard";
 import { getAllPosts } from "@/lib/posts";
 
@@ -29,15 +29,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="relative w-full aspect-[5/2] rounded overflow-hidden -mt-6">
-        <Image
-          src="/mood-photo-home.JPG"
-          alt=""
-          fill
-          className="object-cover"
-          priority
-        />
-      </div>
+      <MoodPhoto src="/mood-photo-home.JPG" />
 
       <section>
         <div className="flex items-baseline justify-between mb-6">
