@@ -30,10 +30,16 @@ export function getAllPosts(): PostMeta[] {
       const fileContents = fs.readFileSync(filePath, "utf8");
       const { data } = matter(fileContents);
 
+      const rawDate = data.date;
+      const date =
+        rawDate instanceof Date
+          ? rawDate.toISOString().split("T")[0]
+          : (rawDate as string);
+
       return {
         slug,
         title: data.title as string,
-        date: data.date as string,
+        date,
         excerpt: data.excerpt as string | undefined,
         image: data.image as string | undefined,
       };
@@ -49,10 +55,16 @@ export function getPost(slug: string): Post | null {
   const fileContents = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(fileContents);
 
+  const rawDate = data.date;
+  const date =
+    rawDate instanceof Date
+      ? rawDate.toISOString().split("T")[0]
+      : (rawDate as string);
+
   return {
     slug,
     title: data.title as string,
-    date: data.date as string,
+    date,
     excerpt: data.excerpt as string | undefined,
     content,
   };
