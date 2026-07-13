@@ -34,13 +34,15 @@ export function getAllPosts(): PostMeta[] {
       const date =
         rawDate instanceof Date
           ? rawDate.toISOString().split("T")[0]
-          : (rawDate as string);
+          : (rawDate as string).replace(/[""'']/g, "").trim();
 
       return {
         slug,
-        title: data.title as string,
+        title: (data.title as string).replace(/[""'']/g, "").trim(),
         date,
-        excerpt: data.excerpt as string | undefined,
+        excerpt: data.excerpt
+          ? (data.excerpt as string).replace(/[""'']/g, "").trim()
+          : undefined,
         image: data.image as string | undefined,
       };
     })
@@ -59,13 +61,15 @@ export function getPost(slug: string): Post | null {
   const date =
     rawDate instanceof Date
       ? rawDate.toISOString().split("T")[0]
-      : (rawDate as string);
+      : (rawDate as string).replace(/[""'']/g, "").trim();
 
   return {
     slug,
-    title: data.title as string,
+    title: (data.title as string).replace(/[""'']/g, "").trim(),
     date,
-    excerpt: data.excerpt as string | undefined,
+    excerpt: data.excerpt
+      ? (data.excerpt as string).replace(/[""'']/g, "").trim()
+      : undefined,
     content,
   };
 }

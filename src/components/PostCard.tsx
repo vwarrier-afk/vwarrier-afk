@@ -1,51 +1,40 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
-import { useState } from "react";
 import type { PostMeta } from "@/lib/posts";
 
 export default function PostCard({ post }: { post: PostMeta }) {
-  const [hovered, setHovered] = useState(false);
+  const formattedDate = post.date
+    ? new Date(post.date + "T00:00:00").toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })
+    : null;
 
   return (
-    <article className="relative py-5 border-b border-stone-200 dark:border-stone-800 last:border-0">
-      <time
-        dateTime={post.date}
-        className="text-xs font-mono text-stone-400 dark:text-stone-500 tabular-nums block mb-2"
-      >
-        {new Date(post.date + "T00:00:00").toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        })}
-      </time>
-
-      <Link
-        href={`/blog/${post.slug}`}
-        className="text-lg font-semibold text-stone-900 dark:text-stone-50 hover:text-amber-600 dark:hover:text-amber-500 transition-colors"
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-      >
-        {post.title}
-      </Link>
-
-      {post.image && hovered && (
-        <div className="absolute left-0 -top-2 -translate-y-full z-10 pointer-events-none shadow-lg rounded overflow-hidden">
-          <Image
-            src={post.image}
-            alt={post.title}
-            width={280}
-            height={160}
-            className="object-cover"
-          />
-        </div>
+    <Link
+      href={`/blog/${post.slug}`}
+      className="group block py-5 border-b border-stone-200 dark:border-stone-800 last:border-0 hover:bg-stone-50 dark:hover:bg-stone-900/50 -mx-3 px-3 rounded transition-colors"
+    >
+      {formattedDate && (
+        <time
+          dateTime={post.date}
+          className="text-xs font-mono text-stone-400 dark:text-stone-500 tabular-nums block mb-2"
+        >
+          {formattedDate}
+        </time>
       )}
+
+      <p className="text-lg font-semibold text-stone-900 dark:text-stone-50 group-hover:text-amber-600 dark:group-hover:text-amber-500 transition-colors">
+        {post.title}
+        <span className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+      </p>
 
       {post.excerpt && (
         <p className="mt-2 text-stone-500 dark:text-stone-400 leading-relaxed line-clamp-2">
           {post.excerpt}
         </p>
       )}
-    </article>
+    </Link>
   );
 }
