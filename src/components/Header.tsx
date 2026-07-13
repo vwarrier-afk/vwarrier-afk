@@ -27,14 +27,14 @@ export default function Header() {
         {/* Single row — name left, controls right */}
         <div className="h-14 flex items-center justify-between">
           <Link href="/" aria-label="Home" className="p-2 -ml-2 opacity-90 hover:opacity-100 transition-opacity">
-            <svg width="30" height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-              <rect width="32" height="32" rx="3" fill="#f59e0b"/>
-              <rect x="2.5" y="2.5" width="27" height="27" rx="1" fill="none" stroke="#1c1917" strokeWidth="1.1"/>
-              <text x="16" y="21.5"
+            <svg width="64" height="28" viewBox="0 0 64 28" xmlns="http://www.w3.org/2000/svg">
+              <rect width="64" height="28" rx="2" fill="#f59e0b"/>
+              <rect x="2" y="2" width="60" height="24" rx="1" fill="none" stroke="#1c1917" strokeWidth="1.1"/>
+              <text x="32" y="19"
                 fontFamily="Georgia, 'Times New Roman', serif"
-                fontSize="13.5" fontWeight="700"
+                fontSize="13" fontWeight="700"
                 fill="#1c1917" textAnchor="middle"
-                letterSpacing="-0.5">VW</text>
+                letterSpacing="4">VW</text>
             </svg>
           </Link>
 
